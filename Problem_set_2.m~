@@ -34,23 +34,12 @@ for j=1:iterations-1
 end
 X=0:deltat:iterations*deltat-deltat;
 Y=0:deltax:N*deltax-deltax;
-fig=figure(1);
 contourf(X,Y,S,20)
 colorbar
-title('Susceptibles as a function of time and space')
+title('S as a function of time and space')
 xlabel('Time (t)')
 ylabel('Space (x)')
-tmp1=find(S(50,:)>2,1,'first');
+tmp1=find(S(50,:)>10,1,'last');
 tmp2=find(S(50,:)>4,1,'first');
 tmp3=find(S(50,:)>6,1,'first');
-wavespeed=(S(50,tmp1+1)-S(50,tmp1))/deltat
-saveas(fig,'Susceptibles.png')
-fig2=figure(2);
-contourf(X,Y,I,20)
-colorbar
-title('Infectives as a function of time and space')
-xlabel('Time (t)')
-ylabel('Space (x)')
-tmp1=find(S(50,:)>2,1,'first');
-wavespeedInfectives=(S(50,tmp1+1)-S(50,tmp1))/deltat
-saveas(fig,'Infectives.png')
+(S(50,tmp)-S(50,380))/deltat
