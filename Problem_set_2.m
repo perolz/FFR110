@@ -52,5 +52,5 @@ title('Infectives as a function of time and space')
 xlabel('Time (t)')
 ylabel('Space (x)')
 tmp1=find(S(50,:)>2,1,'first');
-wavespeedInfectives=(S(50,tmp1+1)-S(50,tmp1))/deltat
+wavespeedInfectives=(S(50,tmp1+1)-S(50,tmp1))/deltat;
 saveas(fig,'Infectives.png')
